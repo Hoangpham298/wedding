@@ -1,9 +1,9 @@
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgxJ2qJ_FW6K6K2G4Dfoqk3IHaCqbnndy4_pePNNLHKuYsXfmGRL06EiXGjuapN1Iy/exec';
 
-// ĐỌC TÊN KHÁCH MỜI TỪ LINK WEB (?to=Tên)
 document.addEventListener('DOMContentLoaded', () => {
   fetchWishes();
 
+  // 1. ĐỌC TÊN KHÁCH MỜI TỪ LINK WEB (?to=Tên)
   const urlParams = new URLSearchParams(window.location.search);
   const guestName = urlParams.get('to') || urlParams.get('khach');
 
@@ -15,7 +15,69 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameInput = document.getElementById('name');
     if (nameInput) nameInput.value = decodedName;
   }
+
+  // 2. TỰ ĐỘNG KÍCH HOẠT HIỆU ỨNG TRÁI TIM RƠI
+  setInterval(createFallingHeart, 400);
+
+  // 3. XỬ LÝ NHẠC CƯỚI NỀN
+  setupMusicPlayer();
 });
+
+// HÀM TẠO TRÁI TIM RƠI
+function createFallingHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('falling-heart');
+  
+  // Biểu tượng trái tim / hoa hồng ngẫu nhiên
+  const icons = ['❤️', '💖', '💕', '🌸'];
+  heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = Math.random() * 3 + 4 + 's'; // Rơi trong 4-7 giây
+  heart.style.fontSize = Math.random() * 10 + 14 + 'px';
+  heart.style.opacity = Math.random() * 0.7 + 0.3;
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+}
+
+// HÀM XỬ LÝ PHÁT NHẠC
+function setupMusicPlayer() {
+  const musicBtn = document.getElementById('musicControl');
+  const bgMusic = document.getElementById('bgMusic');
+
+  if (musicBtn && bgMusic) {
+    musicBtn.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.classList.remove('paused');
+        musicBtn.classList.add('playing');
+      } else {
+        bgMusic.pause();
+        musicBtn.classList.remove('playing');
+        musicBtn.classList.add('paused');
+      }
+    });
+
+    // Phát nhạc tự động khi người dùng chạm/lướt trang web lần đầu tiên
+    const startAudioOnInteraction = () => {
+      if (bgMusic.paused && musicBtn.classList.contains('paused')) {
+        bgMusic.play().then(() => {
+          musicBtn.classList.remove('paused');
+          musicBtn.classList.add('playing');
+        }).catch(() => {});
+      }
+      document.removeEventListener('click', startAudioOnInteraction);
+      document.removeEventListener('touchstart', startAudioOnInteraction);
+    };
+
+    document.addEventListener('click', startAudioOnInteraction);
+    document.addEventListener('touchstart', startAudioOnInteraction);
+  }
+}
 
 // TẢI SỔ LỜI CHÚC TỪ GOOGLE SHEETS
 function fetchWishes() {
