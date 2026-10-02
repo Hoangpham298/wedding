@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-/* NỀN TOÀN MÀN HÌNH TÔNG BE HỒNG */
+/* 1. NỀN TOÀN MÀN HÌNH TÔNG BE HỒNG (BLUSH BEIGE) */
 body {
   background: linear-gradient(135deg, #fdf6f0 0%, #f8ece4 40%, #f3e2d7 100%) fixed;
   font-family: 'Montserrat', sans-serif;
@@ -12,42 +12,50 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
-/* KHUNG THIỆP TĂNG 50% KÍCH THƯỚC (MAX-WIDTH: 1020PX) */
+/* 2. KHUNG THIỆP CHÍNH (MAX-WIDTH: 1020PX) */
 .wedding-card-wrapper {
   max-width: 1020px;
   margin: 40px auto;
   background-color: rgba(255, 252, 248, 0.96);
   background-image: radial-gradient(#e8d6c7 0.8px, transparent 0.8px);
   background-size: 14px 14px;
-  padding: 50px 50px;
-  box-shadow: 0 12px 45px rgba(168, 40, 40, 0.1), 0 3px 20px rgba(0, 0, 0, 0.06);
+  padding: 50px 45px;
+  box-shadow: 0 12px 45px rgba(168, 40, 40, 0.08), 0 3px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid #f0decb;
   border-radius: 20px;
   text-align: center;
   backdrop-filter: blur(6px);
 }
 
-/* 1. HEADER TÊN CẶP ĐÔI */
+/* 3. BÌA HEADER & TÊN CẶP ĐÔI */
 .card-header {
   margin-bottom: 45px;
 }
 
+.header-sparkle {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #a82828;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .header-couple-name {
   font-family: 'Alex Brush', cursive;
-  font-size: 5rem;
+  font-size: 4.8rem;
   color: #2b2b2b;
   font-weight: 400;
   line-height: 1.1;
 }
 
 .header-and {
-  font-family: 'Alex Brush', cursive;
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   color: #a82828;
   display: block;
-  margin: -8px 0;
+  margin: 5px 0;
 }
 
 .main-photo-frame {
@@ -56,9 +64,10 @@ body {
   max-width: 850px;
   border: 8px solid #fff;
   outline: 1px solid #ebd8c8;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   overflow: hidden;
+  animation: heroZoom 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .main-photo {
@@ -69,13 +78,13 @@ body {
 
 .wedding-quote {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #4a4a4a;
   margin-top: 25px;
   line-height: 1.6;
 }
 
-/* 2. THÔNG BÁO LỄ THÀNH HÔN */
+/* 4. KHỐI BÁO TIN & THÔNG TIN HAI HỌ */
 .announcement-section {
   margin: 50px 0;
   border-top: 1px solid #eedecf;
@@ -85,9 +94,16 @@ body {
 .red-title-header {
   font-family: 'Literata', serif;
   color: #a82828;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.announcement-sub {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
   margin-bottom: 30px;
 }
 
@@ -101,10 +117,11 @@ body {
 .parent-col {
   flex: 1;
   text-align: center;
-  background: rgba(255, 248, 242, 0.8);
-  padding: 18px;
-  border-radius: 10px;
+  background: rgba(255, 248, 242, 0.85);
+  padding: 20px;
+  border-radius: 12px;
   border: 1px solid #f2e2d4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
 .parent-label {
@@ -121,36 +138,21 @@ body {
   line-height: 1.6;
 }
 
-.couple-names-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 30px 0;
-}
-
-.role-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.role-title {
-  font-size: 0.95rem;
+.parent-role {
+  font-size: 0.85rem;
   font-weight: 700;
-  color: #333;
-  letter-spacing: 2px;
+  color: #775c4c;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .script-red-name {
   font-family: 'Alex Brush', cursive;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #a82828;
-}
-
-.heart-divider {
-  font-size: 2.2rem;
-  color: #a82828;
+  display: block;
+  margin-top: 2px;
 }
 
 .two-photos-grid {
@@ -163,10 +165,15 @@ body {
   width: 50%;
   border-radius: 10px;
   border: 4px solid #fff;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease;
 }
 
-/* 3. TRÂN TRỌNG KÍNH MỜI */
+.two-photos-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* 5. LỜI MỜI KÍNH MỜI */
 .invitation-section {
   margin: 50px 0;
   border-top: 1px solid #eedecf;
@@ -176,7 +183,7 @@ body {
 .dark-title-header {
   font-family: 'Literata', serif;
   color: #222;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -195,7 +202,7 @@ body {
 }
 
 .invitation-text {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #555;
   margin-bottom: 30px;
   font-style: italic;
@@ -210,10 +217,15 @@ body {
   width: 33.33%;
   border-radius: 10px;
   border: 4px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease;
 }
 
-/* 4. SỰ KIỆN LỄ & TIỆC CƯỚI */
+.three-photos-grid img:hover {
+  transform: scale(1.04);
+}
+
+/* 6. CHƯƠNG TRÌNH SỰ KIỆN LỄ & TIỆC CƯỚI */
 .timeline-events-section {
   margin: 50px 0;
   border-top: 1px solid #eedecf;
@@ -221,7 +233,15 @@ body {
 }
 
 .event-card-style {
-  padding: 20px 0;
+  padding: 22px 15px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card-style:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 25px rgba(168, 40, 40, 0.08);
 }
 
 .event-icon-badge {
@@ -231,14 +251,14 @@ body {
 
 .event-card-title {
   font-family: 'Literata', serif;
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   color: #222;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
 
 .day-of-week {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
   margin: 6px 0 12px;
   letter-spacing: 2px;
@@ -253,43 +273,43 @@ body {
 }
 
 .time-col, .year-col {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #222;
 }
 
 .big-number {
-  font-size: 4.2rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #111;
   border-left: 3px solid #a82828;
   border-right: 3px solid #a82828;
-  padding: 0 30px;
+  padding: 0 28px;
   line-height: 1;
 }
 
 .month-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #333;
 }
 
 .lunar-text {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #777;
   font-style: italic;
   margin-top: 6px;
 }
 
 .place-text {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #a82828;
   margin-top: 12px;
 }
 
 .address-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555;
   margin-top: 4px;
 }
@@ -301,14 +321,16 @@ body {
   background-color: #a82828;
   color: #fff;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 30px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-map-link:hover {
   background-color: #8b1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(168, 40, 40, 0.3);
 }
 
 .divider-line {
@@ -318,7 +340,7 @@ body {
   margin: 35px auto;
 }
 
-/* 5. BẢNG LỊCH "SAVE THE DATE" */
+/* 7. BẢNG LỊCH "SAVE THE DATE" */
 .calendar-card-section {
   margin: 50px 0;
   border-top: 1px solid #eedecf;
@@ -332,7 +354,7 @@ body {
 }
 
 .calendar-heading {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
   color: #444;
   margin: 12px 0 25px;
@@ -352,15 +374,15 @@ body {
 
 .mini-calendar th {
   padding: 12px 8px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #555;
   background-color: #faf2eb;
   border-bottom: 1px solid #ebdcd0;
 }
 
 .mini-calendar td {
-  padding: 15px 8px;
-  font-size: 1.05rem;
+  padding: 14px 8px;
+  font-size: 1rem;
   color: #333;
   position: relative;
 }
@@ -372,6 +394,12 @@ body {
 .mini-calendar td.heart-marked {
   color: #a82828;
   font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.mini-calendar td.heart-marked:hover {
+  transform: scale(1.25);
+  cursor: pointer;
 }
 
 .mini-calendar td.heart-marked::after {
@@ -380,12 +408,187 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   color: rgba(168, 40, 40, 0.35);
   pointer-events: none;
 }
 
-/* 6. FORM RSVP */
+/* 8. ALBUM ẢNH CƯỚI (GALLERY) */
+.gallery-card-section {
+  margin: 50px 0;
+  border-top: 1px solid #eedecf;
+  padding-top: 40px;
+}
+
+.gallery-sub {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* 9. HỘP MỪNG CƯỚI & POPUP QR */
+.gift-section {
+  margin: 50px 0;
+  border-top: 1px solid #eedecf;
+  padding-top: 40px;
+}
+
+.gift-sub {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  line-height: 1.6;
+}
+
+.btn-gift-popup {
+  padding: 15px 35px;
+  background-color: #a82828;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: btnPulse 2.5s infinite;
+}
+
+.btn-gift-popup:hover {
+  background-color: #8b1e1e;
+  transform: scale(1.04);
+}
+
+/* POPUP MODAL STYLING */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: #fdfaf6;
+  padding: 35px;
+  border-radius: 18px;
+  max-width: 650px;
+  width: 90%;
+  position: relative;
+  transform: scale(0.85);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e8d6c7;
+  text-align: center;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: 'Literata', serif;
+  color: #a82828;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.modal-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.qr-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.qr-card {
+  flex: 1;
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #ebdcd0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.qr-card h4 {
+  font-size: 0.95rem;
+  color: #a82828;
+  margin-bottom: 8px;
+}
+
+.bank-info {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.qr-img {
+  width: 160px;
+  height: 160px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* 10. FORM RSVP & SỔ LỜI CHÚC */
 .rsvp-card-section {
   margin-top: 50px;
   border-top: 1px solid #eedecf;
@@ -398,7 +601,7 @@ body {
 }
 
 .rsvp-sub {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
   text-align: center;
   margin-bottom: 30px;
@@ -410,7 +613,7 @@ body {
 
 .form-group label {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 6px;
   color: #444;
@@ -421,7 +624,7 @@ body {
   padding: 14px;
   border: 1px solid #e0cfc1;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background-color: #fff;
 }
 
@@ -437,6 +640,7 @@ body {
   cursor: pointer;
   margin-top: 10px;
   transition: background 0.3s;
+  animation: btnPulse 2.5s infinite;
 }
 
 #btnSubmit:hover {
@@ -446,7 +650,7 @@ body {
 .status-msg {
   margin-top: 18px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
@@ -457,12 +661,12 @@ body {
   margin-top: 35px;
   background: #fff;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #e2d2c4;
 }
 
 .guestbook-container h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #a82828;
   text-align: center;
   margin-bottom: 18px;
@@ -477,17 +681,17 @@ body {
 }
 
 .wish-author {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: #a82828;
 }
 
 .wish-text {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #444;
 }
 
-/* NÚT BẬT/TẮT NHẠC XOAY TRÒN */
+/* 11. NÚT BẬT/TẮT NHẠC XOAY ĐĨA */
 .music-btn {
   position: fixed;
   bottom: 25px;
@@ -511,12 +715,56 @@ body {
   animation: rotateDisc 4s linear infinite;
 }
 
+/* 12. HIỆU ỨNG ANIMATIONS & KEYFRAMES */
+
+/* Scroll Reveal Trượt Hiện */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyframe đĩa nhạc xoay */
 @keyframes rotateDisc {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* HIỆU ỨNG TRÁI TIM RƠI */
+/* Keyframe phóng to hero image */
+@keyframes heroZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Keyframe nút bấm phát sáng nảy nhẹ */
+@keyframes btnPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(168, 40, 40, 0.4);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(168, 40, 40, 0);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(168, 40, 40, 0);
+    transform: scale(1);
+  }
+}
+
+/* Hiệu ứng trái tim rơi */
 .falling-heart {
   position: fixed;
   top: -20px;
@@ -537,7 +785,7 @@ body {
   }
 }
 
-/* TỰ ĐỘNG TỐI ƯU TRÊN MÀN HÌNH ĐIỆN THOẠI */
+/* 13. TỐI ƯU GIAO DIỆN MÀN HÌNH ĐIỆN THOẠI */
 @media (max-width: 768px) {
   .wedding-card-wrapper {
     margin: 15px auto;
@@ -545,13 +793,19 @@ body {
     max-width: 95%;
   }
   .header-couple-name { font-size: 3.2rem; }
-  .header-and { font-size: 2.2rem; }
   .script-red-name { font-size: 2.5rem; }
   #guestName { font-size: 2.4rem; }
   .big-number { font-size: 3rem; padding: 0 18px; }
   .parents-grid {
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .qr-grid {
+    flex-direction: column;
+    gap: 15px;
   }
   .mini-calendar {
     width: 100%;
