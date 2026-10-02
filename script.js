@@ -1,10 +1,7 @@
-const SCRIPT_URL = '[https://script.google.com/macros/s/AKfycbzgxJ2qJ_FW6K6K2G4Dfoqk3IHaCqbnndy4_pePNNLHKuYsXfmGRL06EiXGjuapN1Iy/exec](https://script.google.com/macros/s/AKfycbzgxJ2qJ_FW6K6K2G4Dfoqk3IHaCqbnndy4_pePNNLHKuYsXfmGRL06EiXGjuapN1Iy/exec)';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgxJ2qJ_FW6K6K2G4Dfoqk3IHaCqbnndy4_pePNNLHKuYsXfmGRL06EiXGjuapN1Iy/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. TẢI DANH SÁCH LỜI CHÚC TỪ GOOGLE SHEETS
-  fetchWishes();
-
-  // 2. ĐỌC TÊN KHÁCH MỜI TỪ LINK WEB (?to=TênKhách)
+  // 1. LẤY TÊN KHÁCH MỜI TỪ LINK WEB (?to=Tên)
   const urlParams = new URLSearchParams(window.location.search);
   const guestName = urlParams.get('to') || urlParams.get('khach');
 
@@ -17,26 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nameInput) nameInput.value = decodedName;
   }
 
-  // 3. THIẾT LẬP HIỆU ỨNG SCROLL REVEAL (TRƯỢT HIỆN)
+  // 2. KÍCH HOẠT HIỆU ỨNG SCROLL REVEAL
   setupScrollReveal();
 
-  // 4. KÍCH HOẠT HIỆU ỨNG TRÁI TIM RƠI
-  setInterval(createFallingHeart, 400);
+  // 3. TỰ ĐỘNG TẠO TRÁI TIM RƠI (Chạy định kỳ 450ms)
+  setInterval(createFallingHeart, 450);
 
-  // 5. THIẾT LẬP TRÌNH PHÁT NHẠC CƯỚI NỀN
+  // 4. XỬ LÝ PHÁT NHẠC NỀN
   setupMusicPlayer();
 
-  // 6. THIẾT LẬP POPUP MÃ QR MỪNG CƯỚI
+  // 5. XỬ LÝ POPUP MODAL MÃ QR
   setupQrModal();
 
-  // 7. XỬ LÝ SỰ KIỆN GỬI FORM RSVP
+  // 6. XỬ LÝ FORM RSVP
   setupFormRSVP();
 });
 
-// HÀM 1: SCROLL REVEAL (HIỆU ỨNG CUỘN TRANG XUẤT HIỆN)
+// HÀM XỬ LÝ SCROLL REVEAL (HIỆU ỨNG CUỘN TRANG)
 function setupScrollReveal() {
   const elementsToAnimate = document.querySelectorAll(
-    '.announcement-section, .invitation-section, .timeline-events-section, .calendar-card-section, .gallery-card-section, .gift-section, .rsvp-card-section, .event-card-style, .gallery-item'
+    '.announcement-section, .invitation-section, .timeline-events-section, .calendar-card-section, .gallery-card-section, .gift-section, .rsvp-card-section, .event-card-style, .gallery-item, .parent-col'
   );
 
   elementsToAnimate.forEach((el) => {
@@ -60,62 +57,27 @@ function setupScrollReveal() {
   elementsToAnimate.forEach(el => scrollObserver.observe(el));
 }
 
-// HÀM 2: TẠO TRÁI TIM & BÔNG HOA RƠI
+// HÀM TẠO TRÁI TIM RƠI ĐỘNG (CHỈ DÙNG TRÁI TIM)
 function createFallingHeart() {
   const heart = document.createElement('div');
   heart.classList.add('falling-heart');
   
-  const icons = ['❤️', '💖', '💕', '🌸', '✨'];
-  heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+  const hearts = ['❤️', '💖', '💕'];
+  heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
 
-  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.left = Math.random() * 98 + 'vw';
   heart.style.animationDuration = Math.random() * 3 + 4 + 's';
-  heart.style.fontSize = Math.random() * 10 + 14 + 'px';
-  heart.style.opacity = Math.random() * 0.7 + 0.3;
+  heart.style.fontSize = Math.random() * 8 + 14 + 'px';
+  heart.style.opacity = Math.random() * 0.6 + 0.4;
 
   document.body.appendChild(heart);
 
   setTimeout(() => {
     heart.remove();
-  }, 7000);
+  }, 7500);
 }
 
-// HÀM 3: XỬ LÝ BẬT/TẮT NHẠC CƯỚI
-function setupMusicPlayer() {
-  const musicBtn = document.getElementById('musicControl');
-  const bgMusic = document.getElementById('bgMusic');
-
-  if (musicBtn && bgMusic) {
-    musicBtn.addEventListener('click', () => {
-      if (bgMusic.paused) {
-        bgMusic.play();
-        musicBtn.classList.remove('paused');
-        musicBtn.classList.add('playing');
-      } else {
-        bgMusic.pause();
-        musicBtn.classList.remove('playing');
-        musicBtn.classList.add('paused');
-      }
-    });
-
-    // Phát nhạc tự động khi người dùng chạm hoặc lướt trang web lần đầu tiên
-    const startAudioOnInteraction = () => {
-      if (bgMusic.paused && musicBtn.classList.contains('paused')) {
-        bgMusic.play().then(() => {
-          musicBtn.classList.remove('paused');
-          musicBtn.classList.add('playing');
-        }).catch(() => {});
-      }
-      document.removeEventListener('click', startAudioOnInteraction);
-      document.removeEventListener('touchstart', startAudioOnInteraction);
-    };
-
-    document.addEventListener('click', startAudioOnInteraction);
-    document.addEventListener('touchstart', startAudioOnInteraction);
-  }
-}
-
-// HÀM 4: XỬ LÝ POPUP MODAL MÃ QR MỪNG CƯỚI
+// XỬ LÝ POPUP MODAL QR
 function setupQrModal() {
   const openQrBtn = document.getElementById('openQrBtn');
   const closeQrBtn = document.getElementById('closeQrBtn');
@@ -142,31 +104,41 @@ function setupQrModal() {
   }
 }
 
-// HÀM 5: TẢI SỔ LỜI CHÚC TỪ GOOGLE SHEETS BACKEND
-function fetchWishes() {
-  const container = document.getElementById('wishesContainer');
-  if (!container) return;
+// XỬ LÝ BẬT / TẮT NHẠC
+function setupMusicPlayer() {
+  const musicBtn = document.getElementById('musicControl');
+  const bgMusic = document.getElementById('bgMusic');
 
-  fetch(SCRIPT_URL)
-    .then(res => res.json())
-    .then(data => {
-      if (data.result === 'success' && data.data && data.data.length > 0) {
-        container.innerHTML = data.data.map(item => `
-          <div class="wish-card">
-            <div class="wish-author">${escapeHtml(item.name)}</div>
-            <div class="wish-text">${escapeHtml(item.wishes)}</div>
-          </div>
-        `).join('');
+  if (musicBtn && bgMusic) {
+    musicBtn.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.classList.remove('paused');
+        musicBtn.classList.add('playing');
       } else {
-        container.innerHTML = '<p style="text-align:center; color:#888; font-size:0.85rem;">Chưa có lời chúc nào. Hãy là người đầu tiên gửi lời chúc nhé!</p>';
+        bgMusic.pause();
+        musicBtn.classList.remove('playing');
+        musicBtn.classList.add('paused');
       }
-    })
-    .catch(() => {
-      container.innerHTML = '<p style="text-align:center; color:#888; font-size:0.85rem;">Chưa có lời chúc nào hoặc không thể tải danh sách.</p>';
     });
+
+    const startAudioOnInteraction = () => {
+      if (bgMusic.paused && musicBtn.classList.contains('paused')) {
+        bgMusic.play().then(() => {
+          musicBtn.classList.remove('paused');
+          musicBtn.classList.add('playing');
+        }).catch(() => {});
+      }
+      document.removeEventListener('click', startAudioOnInteraction);
+      document.removeEventListener('touchstart', startAudioOnInteraction);
+    };
+
+    document.addEventListener('click', startAudioOnInteraction);
+    document.addEventListener('touchstart', startAudioOnInteraction);
+  }
 }
 
-// HÀM 6: XỬ LÝ GỬI FORM RSVP
+// XỬ LÝ GỬI FORM RSVP
 function setupFormRSVP() {
   const form = document.getElementById('rsvpForm');
   const btnSubmit = document.getElementById('btnSubmit');
@@ -202,7 +174,6 @@ function setupFormRSVP() {
         statusMsg.className = 'status-msg success';
         statusMsg.innerText = 'Cảm ơn bạn đã xác nhận và gửi lời chúc!';
         form.reset();
-        setTimeout(fetchWishes, 1000);
       } else {
         throw new Error(res.message || 'Lỗi xử lý');
       }
@@ -217,10 +188,4 @@ function setupFormRSVP() {
       btnSubmit.innerText = 'GỬI XÁC NHẬN';
     });
   });
-}
-
-// HÀM BẢO VỆ CHỐNG MÃ ĐỘC HTML (ESCAPE HTML)
-function escapeHtml(str) {
-  if (!str) return '';
-  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }

@@ -1,727 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 1. NỀN TOÀN MÀN HÌNH TÔNG BE HỒNG (BLUSH BEIGE) */
 body {
-  background: linear-gradient(135deg, #fdf6f0 0%, #f8ece4 40%, #f3e2d7 100%) fixed;
+  background: linear-gradient(135deg, #fdf8f5 0%, #f7ece5 50%, #f1e2d8 100%) fixed;
   font-family: 'Montserrat', sans-serif;
-  color: #333;
-  line-height: 1.6;
+  color: #2b2b2b;
+  line-height: 1.85;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 2. KHUNG THIỆP CHÍNH (MAX-WIDTH: 1020PX) */
 .wedding-card-wrapper {
-  max-width: 1020px;
+  max-width: 1000px;
   margin: 40px auto;
-  background-color: rgba(255, 252, 248, 0.96);
-  background-image: radial-gradient(#e8d6c7 0.8px, transparent 0.8px);
-  background-size: 14px 14px;
-  padding: 50px 45px;
-  box-shadow: 0 12px 45px rgba(168, 40, 40, 0.08), 0 3px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0decb;
-  border-radius: 20px;
+  background-color: rgba(255, 254, 252, 0.98);
+  background-image: radial-gradient(#e5d3c5 0.8px, transparent 0.8px);
+  background-size: 16px 16px;
+  padding: 60px 48px;
+  box-shadow: 0 15px 45px rgba(140, 36, 36, 0.06), 0 2px 15px rgba(0, 0, 0, 0.04);
+  border: 1px solid #efe2d5;
+  border-radius: 18px;
   text-align: center;
   backdrop-filter: blur(6px);
 }
 
-/* 3. BÌA HEADER & TÊN CẶP ĐÔI */
-.card-header {
-  margin-bottom: 45px;
-}
-
-.header-sparkle {
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  color: #a82828;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.header-couple-name {
-  font-family: 'Alex Brush', cursive;
-  font-size: 4.8rem;
-  color: #2b2b2b;
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-.header-and {
-  font-size: 2.2rem;
-  color: #a82828;
-  display: block;
-  margin: 5px 0;
-}
-
-.main-photo-frame {
-  margin: 30px auto;
-  width: 92%;
-  max-width: 850px;
-  border: 8px solid #fff;
-  outline: 1px solid #ebd8c8;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  animation: heroZoom 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-.main-photo {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.wedding-quote {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
-  color: #4a4a4a;
-  margin-top: 25px;
-  line-height: 1.6;
-}
-
-/* 4. KHỐI BÁO TIN & THÔNG TIN HAI HỌ */
-.announcement-section {
-  margin: 50px 0;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-}
-
-.red-title-header {
-  font-family: 'Literata', serif;
-  color: #a82828;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.announcement-sub {
-  font-size: 0.9rem;
-  color: #666;
-  font-style: italic;
-  margin-bottom: 30px;
-}
-
-.parents-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 30px;
-}
-
-.parent-col {
-  flex: 1;
-  text-align: center;
-  background: rgba(255, 248, 242, 0.85);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #f2e2d4;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-}
-
-.parent-label {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #775c4c;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
-
-.parent-names {
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.6;
-}
-
-.parent-role {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #775c4c;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.script-red-name {
-  font-family: 'Alex Brush', cursive;
-  font-size: 3rem;
-  color: #a82828;
-  display: block;
-  margin-top: 2px;
-}
-
-.two-photos-grid {
-  display: flex;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.two-photos-grid img {
-  width: 50%;
-  border-radius: 10px;
-  border: 4px solid #fff;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.06);
-  transition: transform 0.4s ease;
-}
-
-.two-photos-grid img:hover {
-  transform: scale(1.03);
-}
-
-/* 5. LỜI MỜI KÍNH MỜI */
-.invitation-section {
-  margin: 50px 0;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-}
-
-.dark-title-header {
-  font-family: 'Literata', serif;
-  color: #222;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-.guest-name-display {
-  margin: 20px 0;
-}
-
-#guestName {
-  font-family: 'Alex Brush', cursive;
-  font-size: 3.5rem;
-  color: #a82828;
-  border-bottom: 2px dashed #a82828;
-  padding: 0 20px;
-}
-
-.invitation-text {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 30px;
-  font-style: italic;
-}
-
-.three-photos-grid {
-  display: flex;
-  gap: 12px;
-}
-
-.three-photos-grid img {
-  width: 33.33%;
-  border-radius: 10px;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  transition: transform 0.4s ease;
-}
-
-.three-photos-grid img:hover {
-  transform: scale(1.04);
-}
-
-/* 6. CHƯƠNG TRÌNH SỰ KIỆN LỄ & TIỆC CƯỚI */
-.timeline-events-section {
-  margin: 50px 0;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-}
-
-.event-card-style {
-  padding: 22px 15px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.event-card-style:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 8px 25px rgba(168, 40, 40, 0.08);
-}
-
-.event-icon-badge {
-  font-size: 2.6rem;
-  margin-bottom: 8px;
-}
-
-.event-card-title {
-  font-family: 'Literata', serif;
-  font-size: 1.35rem;
-  color: #222;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.day-of-week {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 6px 0 12px;
-  letter-spacing: 2px;
-}
-
-.big-date-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin: 15px 0;
-}
-
-.time-col, .year-col {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #222;
-}
-
-.big-number {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #111;
-  border-left: 3px solid #a82828;
-  border-right: 3px solid #a82828;
-  padding: 0 28px;
-  line-height: 1;
-}
-
-.month-text {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.lunar-text {
-  font-size: 0.9rem;
-  color: #777;
-  font-style: italic;
-  margin-top: 6px;
-}
-
-.place-text {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #a82828;
-  margin-top: 12px;
-}
-
-.address-text {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 4px;
-}
-
-.btn-map-link {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 12px 28px;
-  background-color: #a82828;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
-
-.btn-map-link:hover {
-  background-color: #8b1e1e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(168, 40, 40, 0.3);
-}
-
-.divider-line {
-  width: 80px;
-  height: 1px;
-  background-color: #a82828;
-  margin: 35px auto;
-}
-
-/* 7. BẢNG LỊCH "SAVE THE DATE" */
-.calendar-card-section {
-  margin: 50px 0;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-}
-
-.save-date-script {
-  font-family: 'Alex Brush', cursive;
-  font-size: 3.5rem;
-  color: #333;
-}
-
-.calendar-heading {
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  color: #444;
-  margin: 12px 0 25px;
-}
-
-.mini-calendar {
-  width: 80%;
-  max-width: 650px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  background: #fff;
-  border: 1px solid #ebdcd0;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.mini-calendar th {
-  padding: 12px 8px;
-  font-size: 0.85rem;
-  color: #555;
-  background-color: #faf2eb;
-  border-bottom: 1px solid #ebdcd0;
-}
-
-.mini-calendar td {
-  padding: 14px 8px;
-  font-size: 1rem;
-  color: #333;
-  position: relative;
-}
-
-.mini-calendar td.off {
-  color: #ccc;
-}
-
-.mini-calendar td.heart-marked {
-  color: #a82828;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
-
-.mini-calendar td.heart-marked:hover {
-  transform: scale(1.25);
-  cursor: pointer;
-}
-
-.mini-calendar td.heart-marked::after {
-  content: "♥";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  color: rgba(168, 40, 40, 0.35);
-  pointer-events: none;
-}
-
-/* 8. ALBUM ẢNH CƯỚI (GALLERY) */
-.gallery-card-section {
-  margin: 50px 0;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-}
-
-.gallery-sub {
-  font-size: 0.9rem;
-  color: #666;
-  font-style: italic;
-  margin-bottom: 25px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 10px;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  cursor: pointer;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
-  filter: brightness(1.05);
-}
-
-/* 9. HỘP MỪNG CƯỚI & POPUP QR */
-.gift-section {
-  margin: 50px 0;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-}
-
-.gift-sub {
-  font-size: 0.95rem;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto 25px;
-  line-height: 1.6;
-}
-
-.btn-gift-popup {
-  padding: 15px 35px;
-  background-color: #a82828;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  animation: btnPulse 2.5s infinite;
-}
-
-.btn-gift-popup:hover {
-  background-color: #8b1e1e;
-  transform: scale(1.04);
-}
-
-/* POPUP MODAL STYLING */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
-  z-index: 10000;
-  backdrop-filter: blur(5px);
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-box {
-  background: #fdfaf6;
-  padding: 35px;
-  border-radius: 18px;
-  max-width: 650px;
-  width: 90%;
-  position: relative;
-  transform: scale(0.85);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-  border: 1px solid #e8d6c7;
-  text-align: center;
-}
-
-.modal-overlay.active .modal-box {
-  transform: scale(1);
-}
-
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #888;
-  cursor: pointer;
-}
-
-.modal-title {
-  font-family: 'Literata', serif;
-  color: #a82828;
-  font-size: 1.3rem;
-  margin-bottom: 6px;
-}
-
-.modal-subtitle {
-  font-size: 0.85rem;
-  color: #666;
-  font-style: italic;
-  margin-bottom: 25px;
-}
-
-.qr-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.qr-card {
-  flex: 1;
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  border: 1px solid #ebdcd0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
-
-.qr-card h4 {
-  font-size: 0.95rem;
-  color: #a82828;
-  margin-bottom: 8px;
-}
-
-.bank-info {
-  font-size: 0.8rem;
-  color: #444;
-  line-height: 1.4;
-}
-
-.qr-img {
-  width: 160px;
-  height: 160px;
-  margin-top: 12px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-}
-
-/* 10. FORM RSVP & SỔ LỜI CHÚC */
-.rsvp-card-section {
-  margin-top: 50px;
-  border-top: 1px solid #eedecf;
-  padding-top: 40px;
-  text-align: left;
-}
-
-.rsvp-card-section .dark-title-header {
-  text-align: center;
-}
-
-.rsvp-sub {
-  font-size: 0.9rem;
-  color: #666;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #444;
-}
-
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #e0cfc1;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  background-color: #fff;
-}
-
-#btnSubmit {
-  width: 100%;
-  padding: 16px;
-  background-color: #a82828;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
-  animation: btnPulse 2.5s infinite;
-}
-
-#btnSubmit:hover {
-  background-color: #8b1e1e;
-}
-
-.status-msg {
-  margin-top: 18px;
-  text-align: center;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.status-msg.success { color: #2e7d32; }
-.status-msg.error { color: #c62828; }
-
-.guestbook-container {
-  margin-top: 35px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #e2d2c4;
-}
-
-.guestbook-container h3 {
-  font-size: 1rem;
-  color: #a82828;
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.wish-card {
-  background: #fdfaf6;
-  padding: 12px 16px;
-  border-left: 5px solid #a82828;
-  margin-bottom: 12px;
-  border-radius: 4px;
-}
-
-.wish-author {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #a82828;
-}
-
-.wish-text {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-/* 11. NÚT BẬT/TẮT NHẠC XOAY ĐĨA */
-.music-btn {
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  width: 52px;
-  height: 52px;
-  background-color: #a82828;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(168, 40, 40, 0.3);
-  z-index: 9999;
-  transition: transform 0.3s;
-}
-
-.music-btn.playing {
-  animation: rotateDisc 4s linear infinite;
-}
-
-/* 12. HIỆU ỨNG ANIMATIONS & KEYFRAMES */
-
-/* Scroll Reveal Trượt Hiện */
+/* HIỆU ỨNG CUỘN TRANG TRƯỢT HIỆN (SCROLL REVEAL) */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity;
 }
 
@@ -730,44 +44,653 @@ body {
   transform: translateY(0);
 }
 
-/* Keyframe đĩa nhạc xoay */
-@keyframes rotateDisc {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* 1. HEADER & BÌA THIỆP */
+.card-header {
+  margin-bottom: 55px;
 }
 
-/* Keyframe phóng to hero image */
-@keyframes heroZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.header-sparkle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 6px;
+  color: #8c2424;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
-/* Keyframe nút bấm phát sáng nảy nhẹ */
-@keyframes btnPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(168, 40, 40, 0.4);
-    transform: scale(1);
-  }
-  70% {
-    box-shadow: 0 0 0 14px rgba(168, 40, 40, 0);
-    transform: scale(1.02);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(168, 40, 40, 0);
-    transform: scale(1);
-  }
+/* TÊN CÔ DÂU CHÚ RỂ RẤT TO VÀ MỀM MẠI */
+.header-couple-name {
+  font-family: 'Alex Brush', cursive;
+  font-size: 5.5rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
-/* Hiệu ứng trái tim rơi */
+.header-and {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  color: #8c2424;
+  display: block;
+  margin: 6px 0;
+}
+
+.main-photo-frame {
+  margin: 35px auto;
+  width: 94%;
+  max-width: 860px;
+  border: 10px solid #fff;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CÂU QUOTE MỀM MẠI MỌNG NƯỚC */
+.wedding-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.65rem;
+  color: #333333;
+  margin-top: 28px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* TIÊU ĐỀ SECTION */
+.red-title-header {
+  font-family: 'Cormorant Garamond', serif;
+  color: #8c2424;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.dark-title-header {
+  font-family: 'Cormorant Garamond', serif;
+  color: #1a1a1a;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.announcement-section {
+  margin: 55px 0;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+}
+
+.announcement-sub {
+  font-size: 1.05rem;
+  color: #555555;
+  letter-spacing: 3.5px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* 2. THÔNG TIN CHA MẸ & CẶP ĐÔI */
+.parents-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.parent-col {
+  flex: 1;
+  text-align: center;
+  background: rgba(255, 251, 247, 0.95);
+  padding: 30px 24px;
+  border-radius: 14px;
+  border: 1px solid #f3e5d8;
+  transition: transform 0.3s ease;
+}
+
+.parent-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #725848;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.parent-names {
+  font-size: 1.1rem;
+  color: #2b2b2b;
+  line-height: 1.85;
+  font-weight: 500;
+}
+
+.parent-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #8c2424;
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.script-red-name {
+  font-family: 'Alex Brush', cursive;
+  font-size: 3.6rem;
+  color: #8c2424;
+  display: block;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+/* GRID ẢNH */
+.two-photos-grid, .three-photos-grid {
+  display: flex;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.two-photos-grid img {
+  width: 50%;
+  border-radius: 10px;
+  border: 5px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.three-photos-grid img {
+  width: 33.33%;
+  border-radius: 10px;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 16px rgba(0,0,0,0.06);
+}
+
+/* 3. LỜI MỜI CÁ NHÂN HÓA */
+.invitation-section {
+  margin: 55px 0;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+}
+
+#guestName {
+  font-family: 'Alex Brush', cursive;
+  font-size: 4.2rem;
+  color: #8c2424;
+  border-bottom: 1px dashed #c09d89;
+  padding: 0 30px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.invitation-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: #333333;
+  margin: 24px 0 32px;
+  font-style: italic;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* 4. CHƯƠNG TRÌNH LỄ & TIỆC CƯỚI */
+.timeline-events-section {
+  margin: 55px 0;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+}
+
+.event-card-style {
+  padding: 30px 24px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.event-card-style:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 30px rgba(140, 36, 36, 0.06);
+}
+
+.event-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.day-of-week {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #666666;
+  margin: 8px 0 16px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.big-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin: 18px 0;
+}
+
+.time-col, .year-col {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  font-variant-numeric: lining-nums;
+}
+
+.big-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #8c2424;
+  border-left: 2px solid #e0c9b8;
+  border-right: 2px solid #e0c9b8;
+  padding: 0 30px;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+
+.month-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 2.5px;
+}
+
+.lunar-text {
+  font-size: 1rem;
+  color: #666666;
+  font-style: italic;
+  margin-top: 8px;
+  font-variant-numeric: lining-nums;
+}
+
+.place-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #8c2424;
+  margin-top: 16px;
+}
+
+.address-text {
+  font-size: 1.05rem;
+  color: #333333;
+  margin-top: 6px;
+  font-weight: 500;
+  font-variant-numeric: lining-nums;
+}
+
+.btn-map-link {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 13px 34px;
+  background-color: #8c2424;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 28px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-map-link:hover {
+  background-color: #701c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 36, 36, 0.25);
+}
+
+.divider-line {
+  width: 70px;
+  height: 1px;
+  background-color: #d8beac;
+  margin: 40px auto;
+}
+
+/* 5. SAVE THE DATE CALENDAR */
+.calendar-card-section {
+  margin: 55px 0;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+}
+
+.save-date-script {
+  font-family: 'Alex Brush', cursive;
+  font-size: 4rem;
+  color: #1a1a1a;
+}
+
+.calendar-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 3.5px;
+  color: #333333;
+  margin: 12px 0 28px;
+  font-weight: 700;
+  font-variant-numeric: lining-nums;
+}
+
+.mini-calendar {
+  width: 85%;
+  max-width: 660px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #ebdcd0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mini-calendar th {
+  font-family: 'Montserrat', sans-serif;
+  padding: 14px 10px;
+  font-size: 0.92rem;
+  color: #444444;
+  background-color: #fbf5f0;
+  border-bottom: 1px solid #ebdcd0;
+  font-weight: 700;
+}
+
+.mini-calendar td {
+  font-family: 'Montserrat', sans-serif;
+  padding: 16px 10px;
+  font-size: 1.15rem;
+  color: #222222;
+  position: relative;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+}
+
+.mini-calendar td.off { color: #cccccc; }
+
+.mini-calendar td.heart-marked {
+  color: #8c2424;
+  font-weight: 800;
+}
+
+.mini-calendar td.heart-marked::after {
+  content: "♥";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+  color: rgba(140, 36, 36, 0.28);
+  pointer-events: none;
+}
+
+/* 6. ALBUM ẢNH CƯỚI */
+.gallery-card-section {
+  margin: 55px 0;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+}
+
+.gallery-sub {
+  font-size: 1rem;
+  color: #666666;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* 7. HỘP MỪNG CƯỚI */
+.gift-section {
+  margin: 55px 0;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+}
+
+.gift-sub {
+  font-size: 1.05rem;
+  color: #444444;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+
+.btn-gift-popup {
+  padding: 16px 42px;
+  background-color: #8c2424;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gift-popup:hover {
+  background-color: #701c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 36, 36, 0.25);
+}
+
+/* 8. MODAL MÃ QR */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: #fdfbf8;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 620px;
+  width: 90%;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ebdcd0;
+  text-align: center;
+}
+
+.modal-overlay.active .modal-box { transform: scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: #8c2424;
+  font-size: 1.55rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.modal-subtitle {
+  font-size: 0.98rem;
+  color: #666666;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.qr-grid { display: flex; gap: 20px; justify-content: center; }
+
+.qr-card {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #f0e2d5;
+}
+
+.qr-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: #8c2424;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.bank-info { font-size: 0.95rem; color: #333333; line-height: 1.6; font-weight: 500; font-variant-numeric: lining-nums; }
+.qr-img { width: 170px; height: 170px; margin-top: 12px; border-radius: 8px; }
+
+/* 9. FORM RSVP XÁC NHẬN */
+.rsvp-card-section {
+  margin-top: 55px;
+  border-top: 1px solid #f0e2d5;
+  padding-top: 50px;
+  text-align: left;
+}
+
+.rsvp-card-section .dark-title-header { text-align: center; }
+
+.rsvp-sub {
+  font-size: 0.98rem;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-group { margin-bottom: 22px; }
+
+.form-group label {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222222;
+  letter-spacing: 0.5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #e2d2c4;
+  border-radius: 8px;
+  font-size: 1.02rem;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  color: #222222;
+}
+
+#btnSubmit {
+  width: 100%;
+  padding: 16px;
+  background-color: #8c2424;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#btnSubmit:hover { background-color: #701c1c; }
+
+.status-msg { margin-top: 20px; text-align: center; font-size: 1.02rem; font-weight: 600; }
+.status-msg.success { color: #2e7d32; }
+.status-msg.error { color: #c62828; }
+
+/* NÚT BẬT TẮT NHẠC */
+.music-btn {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 55px;
+  height: 55px;
+  background-color: #8c2424;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(140, 36, 36, 0.35);
+  z-index: 9999;
+}
+
+.music-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.music-btn.playing { animation: rotateDisc 5s linear infinite; }
+
+/* TRÁI TIM RƠI */
 .falling-heart {
   position: fixed;
-  top: -20px;
+  top: -30px;
   user-select: none;
   pointer-events: none;
   z-index: 9998;
@@ -781,33 +704,22 @@ body {
   }
   100% {
     transform: translateY(105vh) rotate(360deg);
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }
 
-/* 13. TỐI ƯU GIAO DIỆN MÀN HÌNH ĐIỆN THOẠI */
+@keyframes rotateDisc {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @media (max-width: 768px) {
-  .wedding-card-wrapper {
-    margin: 15px auto;
-    padding: 25px 18px;
-    max-width: 95%;
-  }
-  .header-couple-name { font-size: 3.2rem; }
-  .script-red-name { font-size: 2.5rem; }
-  #guestName { font-size: 2.4rem; }
-  .big-number { font-size: 3rem; padding: 0 18px; }
-  .parents-grid {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .qr-grid {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .mini-calendar {
-    width: 100%;
-  }
+  .wedding-card-wrapper { padding: 35px 22px; }
+  .header-couple-name { font-size: 3.8rem; }
+  .script-red-name { font-size: 2.8rem; }
+  #guestName { font-size: 3rem; }
+  .parents-grid { flex-direction: column; gap: 18px; }
+  .gallery-grid { grid-template-columns: repeat(1, 1fr); }
+  .qr-grid { flex-direction: column; gap: 18px; }
+  .mini-calendar { width: 100%; }
 }
