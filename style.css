@@ -443,6 +443,24 @@ body {
   pointer-events: none;
 }
 
+.mini-calendar td.wedding-day {
+  background-color: #8c2424;
+  color: #ffffff !important;
+  border-radius: 50%;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tùy chọn: Thêm hiệu ứng trái tim nhỏ nhắn phía trên số (không che mất số) */
+.mini-calendar td.wedding-day::after {
+  content: '♥';
+  position: absolute;
+  top: -6px;
+  right: -2px;
+  font-size: 10px;
+  color: #e63946;
+}
 /* 6. ALBUM ẢNH CƯỚI */
 .gallery-card-section {
   margin: 55px 0;
@@ -974,3 +992,4 @@ body {
     grid-column: span 1;
   }
 }
+
